@@ -1,3 +1,15 @@
+locals {
+  subnet_common_tags = {
+    "kubernetes.io/cluster/var.cluster_name" = "shared"
+  }
+}
+
+variable "cluster_name" {
+  description = "name of EKS cluster"
+  type        = string
+  default     = "sudheer-demo"
+}
+
 variable "region_name" {
   description = "Region name to launch VPC network"
   type        = string
@@ -38,4 +50,20 @@ variable "private_az" {
   description = "AZ names for private subnets"
   type        = list(string)
   default     = ["us-east-1a", "us-east-1b"]
+}
+
+variable "pub_sub_tags" {
+  description = "Provide tags that needs to be as part of EKS network to manage ELB internet-facing"
+  type        = map(any)
+  default = {
+    "kubernetes.io/role/elb" = "1"
+  }
+}
+
+variable "priv_sub_tags" {
+  description = "Provide tags that needs to be as part of EKS network to manage ELB internal-elb"
+  type        = map(any)
+  default = {
+    "kubernetes.io/role/internal-elb" = "1"
+  }
 }

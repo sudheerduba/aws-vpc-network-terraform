@@ -2,7 +2,7 @@ terraform {
   required_providers {
     aws = {
       source  = "hashicorp/aws"
-      version = "~> 4.0"
+      version = "4.31.0"
     }
   }
 }
@@ -12,7 +12,7 @@ provider "aws" {
 
   default_tags {
     tags = {
-      "Application" = "Kubernetes"
+      "Application" = "EKS-Cluster"
       "Tool"        = "Terragrunt-managed-resource"
     }
   }

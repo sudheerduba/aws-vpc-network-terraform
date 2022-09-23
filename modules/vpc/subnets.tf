@@ -5,9 +5,13 @@ resource "aws_subnet" "eks_public_subnets" {
   map_public_ip_on_launch = true
   availability_zone       = element(var.public_az, count.index)
 
-  tags = {
-    "Name" = "${var.environment}-public-subnet-${element(var.public_az, count.index)}"
-  }
+  tags = merge(
+    var.pub_sub_tags,
+    local.subnet_common_tags,
+    {
+      "Name" = "${var.environment}-public-subnet-${element(var.public_az, count.index)}"
+    }
+  )
 }
 
 resource "aws_subnet" "eks_private_subnets" {
@@ -16,7 +20,11 @@ resource "aws_subnet" "eks_private_subnets" {
   cidr_block        = element(var.private_subnets, count.index)
   availability_zone = element(var.private_az, count.index)
 
-  tags = {
-    "Name" = "${var.environment}-private-subnet-${element(var.private_az, count.index)}"
-  }
+  tags = merge(
+    var.priv_sub_tags,
+    local.subnet_common_tags,
+    {
+      "Name" = "${var.environment}-private-subnet-${element(var.private_az, count.index)}"
+    }
+  )
 }
