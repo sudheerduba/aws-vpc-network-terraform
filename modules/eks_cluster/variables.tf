@@ -12,7 +12,6 @@ variable "eks_subnet_ids" {
 variable "eks_cluster_role" {
   description = "Name of EKS Cluster role to be used"
   type        = string
-  default     = "AWSEKSClusterRole"
 }
 
 variable "eks_cluster_policy_arn" {
