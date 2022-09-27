@@ -21,22 +21,12 @@ variable "environment" {
 
 variable "public_subnets" {
   description = "Provider public subnets CIDR values"
-  type        = list(string)
+  type        = map(any)
 }
 
 variable "private_subnets" {
   description = "Provide private subnets CIDR values"
-  type        = list(string)
-}
-
-variable "public_az" {
-  description = "AZ names for public subnets"
-  type        = list(string)
-}
-
-variable "private_az" {
-  description = "AZ names for private subnets"
-  type        = list(string)
+  type        = map(any)
 }
 
 variable "pub_sub_tags" {
