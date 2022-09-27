@@ -9,13 +9,11 @@ locals {
 variable "node_group_name" {
   description = "Assign name for the Node Group"
   type        = string
-  default     = "webapp_node_group"
 }
 
 variable "node_role_name" {
   description = "Role name for Node Group in eks cluster"
   type        = string
-  default     = "NodeRoleAccess"
 }
 
 variable "eks_cluster_name" {

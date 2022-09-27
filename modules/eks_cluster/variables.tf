@@ -1,7 +1,6 @@
 variable "eks_cluster_name" {
   description = "Name of the EKS Cluster"
   type        = string
-  default     = "sudheer-demo"
 }
 
 variable "eks_subnet_ids" {
