@@ -4,22 +4,14 @@ locals {
   }
 }
 
-variable "cluster_name" {
-  description = "name of EKS cluster"
-  type        = string
-  default     = "sudheer-demo"
-}
-
 variable "region_name" {
   description = "Region name to launch VPC network"
   type        = string
-  default     = "us-east-1"
 }
 
 variable "vpc_cidr_block" {
   description = "VPC network CIDR"
   type        = string
-  default     = "10.10.0.0/16"
 }
 
 variable "environment" {
