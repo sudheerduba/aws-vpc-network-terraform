@@ -5,8 +5,8 @@ module "eks_vpc" {
 module "eks_cluster" {
   source = "./eks_cluster"
 
-  eks_subnet_ids   = flatten([module.eks_vpc.pub_subnets, module.eks_vpc.priv_subnets])
-  eks_cluster_role = var.eks_cluster_role
+  eks_subnet_ids = flatten([module.eks_vpc.pub_subnets, module.eks_vpc.priv_subnets])
+  cluster_role   = var.eks_cluster_role
 
   depends_on = [
     module.eks_vpc

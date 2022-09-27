@@ -9,7 +9,7 @@ variable "eks_subnet_ids" {
   type        = list(string)
 }
 
-variable "eks_cluster_role" {
+variable "cluster_role" {
   description = "Name of EKS Cluster role to be used"
   type        = string
 }
