@@ -16,6 +16,11 @@ variable "node_role_name" {
   type        = string
 }
 
+variable "nodegroup_keypair" {
+  description = "Key pair name to attach for EC2 nodes in Node group"
+  type        = string
+}
+
 variable "eks_cluster_name" {
   description = "Name of EKS Cluster, pulled from eks_cluster module"
   type        = string

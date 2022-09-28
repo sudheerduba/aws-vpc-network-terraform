@@ -15,6 +15,11 @@ variable "node_group_name" {
   type        = string
 }
 
+variable "nodegroup_keypair" {
+  description = "Node group SSH keypair name"
+  type        = string
+}
+
 variable "node_role_name" {
   description = "Role name for Node Group in eks cluster"
   type        = string
