@@ -1,13 +1,11 @@
 variable "eks_cluster_name" {
   description = "Name of the EKS Cluster"
   type        = string
-  default     = "sudheer-demo"
 }
 
 variable "cluster_role" {
   description = "Name of EKS Cluster role to be used"
   type        = string
-  default     = "EKSClusterRoleDemo"
 }
 
 variable "node_group_name" {
